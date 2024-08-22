@@ -1,0 +1,54 @@
+{
+  "name": "app-functions-functions",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/app-functions/functions/src",
+  "projectType": "application",
+  "tags": [
+    "firebase:function",
+    "firebase:name:app-functions-functions",
+    "firebase:dep:app-functions"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/app-functions/functions",
+        "main": "apps/app-functions/functions/src/main.ts",
+        "tsConfig": "apps/app-functions/functions/tsconfig.app.json",
+        "assets": [
+          "apps/app-functions/functions/src/assets",
+          {
+            "glob": "**/*",
+            "input": "apps/app-functions/environment",
+            "output": "."
+          }
+        ],
+        "generatePackageJson": true,
+        "platform": "node",
+        "bundle": true,
+        "thirdParty": false,
+        "dependenciesFieldType": "dependencies",
+        "target": "node16",
+        "format": ["esm"],
+        "esbuildOptions": {
+          "logLevel": "info"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/app-functions/functions/jest.config.ts"
+      }
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "nx run app-functions:deploy --only functions:app-functions-functions"
+      },
+      "dependsOn": ["build"]
+    }
+  }
+}
