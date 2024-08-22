@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "nrwl.angular-console",
+    "esbenp.prettier-vscode",
+    "firsttris.vscode-jest-runner",
+    "streetsidesoftware.code-spell-checker",
+    "chflick.firecode",
+    "dbaeumer.vscode-eslint"
+  ]
+}
