@@ -1,5 +1,5 @@
 {
-  "name": "@firebase-baas/source",
+  "name": "@baas/source",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
