@@ -1,1 +1,3 @@
-export * from './lib/firebase';
+export * from './lib/firestore';
+export * from './lib/auth';
+export * from './lib/storage';
