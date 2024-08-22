@@ -5,6 +5,8 @@
     "firsttris.vscode-jest-runner",
     "streetsidesoftware.code-spell-checker",
     "chflick.firecode",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "angular.ng-template",
+    "jsayol.firebase-explorer"
   ]
 }
